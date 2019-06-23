@@ -10,16 +10,40 @@ class Counter extends Component {
     fontWeight: "bold",
     fontSize: 15
   };
+
+  renderTags() {
+    if (this.state.tags.length === 0) return <p>There is no tags!</p>;
+    return (
+      <ul>
+        {this.state.tags.map(tag => (
+          <li key={tag}>{tag}</li>
+        ))}
+      </ul>
+    );
+  }
+
+  handleIncrement() {
+    console.log("count incremented!", this.state.count);
+  }
+
+  constructor() {
+    super();
+    console.log("Constructor", this);
+    this.handleIncrement = this.handleIncrement.bind(this);
+  }
+
   render() {
     return (
       <React.Fragment>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-        <button className="btn btn-secondary btn-sm">Increment</button>
-        <ul>
-          {this.state.tags.map(tag => (
-            <li key={tag}>{tag}</li>
-          ))}
-        </ul>
+        <button
+          onClick={this.handleIncrement}
+          className="btn btn-secondary btn-sm"
+        >
+          Increment
+        </button>
+        {this.state.tags.length === 0 && <p>Create some tags!</p>}
+        {this.renderTags()}
       </React.Fragment>
     );
   }
