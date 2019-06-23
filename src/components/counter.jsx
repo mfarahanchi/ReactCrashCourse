@@ -22,15 +22,15 @@ class Counter extends Component {
     );
   }
 
-  handleIncrement() {
+  handleIncrement = () => {
     console.log("count incremented!", this.state.count);
-  }
+  }; // arrow function inherits class
 
-  constructor() {
-    super();
-    console.log("Constructor", this);
-    this.handleIncrement = this.handleIncrement.bind(this);
-  }
+  //   constructor() {
+  //     super();
+  //     console.log("Constructor", this);
+  //     this.handleIncrement = this.handleIncrement.bind(this);
+  //   }
 
   render() {
     return (
