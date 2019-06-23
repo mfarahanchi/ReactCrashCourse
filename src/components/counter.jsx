@@ -23,7 +23,7 @@ class Counter extends Component {
   }
 
   handleIncrement = () => {
-    console.log("count incremented!", this.state.count);
+    this.setState({ count: this.state.count + 1 });
   }; // arrow function inherits class
 
   //   constructor() {
