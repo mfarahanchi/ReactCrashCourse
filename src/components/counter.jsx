@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
-  // handleIncrement = () => {
-  //   this.setState({ value: this.state.value + 1 });
-  // };
+  componentDidUpdate(prevProps, prevState) {
+    // does we have a change? is it necessary to do ajax?
+    console.log("prevProps", prevProps);
+    console.log("prevState", prevState);
+    if (prevProps.counter.value !== this.props.counter.value) {
+      // do ajax call and update in server
+    }
+  }
 
   render() {
     console.log("Counter - Rendered");
