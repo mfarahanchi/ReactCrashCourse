@@ -3,8 +3,11 @@ class NavBar extends Component {
   render() {
     return (
       <nav className="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a className="navbar-brand" href="#hh">
           React Crash Course
+          <span className="badge badge-secondary badge-pill">
+            {this.props.totalCounters}
+          </span>
         </a>
       </nav>
     );
