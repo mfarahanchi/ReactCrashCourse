@@ -26,3 +26,20 @@ $0.click();
 ### props vs. state
 
 state is internal data and isolated from other ones. props are data passing between components and they are read-only.
+
+### lifecycle hooks
+
+_mount_
+
+- constructor
+- render
+- componentDidMount
+
+_update_
+
+- render
+- componentDidUpdate
+
+_unmount_
+
+- componentWillUnmount

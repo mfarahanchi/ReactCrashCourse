@@ -14,6 +14,19 @@ class App extends Component {
     ]
   };
 
+  constructor(props) {
+    super(props);
+    console.log("App - Constructor");
+    // console.log(props); // or this.props works same
+    // this.state = this.props.something;
+    // setState gives an error
+  }
+
+  componentDidMount() {
+    // best place to do ajax
+    console.log("App - Mounted");
+  }
+
   handleDelete = counterId => {
     // console.log("handle delete triggered", counterId);
     const counters = this.state.counters.filter(c => c.id !== counterId);
@@ -40,6 +53,7 @@ class App extends Component {
   };
 
   render() {
+    console.log("App - Rendered");
     return (
       <React.Fragment>
         <NavBar
