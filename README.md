@@ -43,3 +43,5 @@ _update_
 _unmount_
 
 - componentWillUnmount
+
+special thanks to codewithmosh.com
